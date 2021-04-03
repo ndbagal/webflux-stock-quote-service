@@ -9,11 +9,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.BiFunction;
 
+import org.springframework.stereotype.Service;
+
 import dev.ndbagal.webfluxstockquoteservice.model.Quote;
 import dev.ndbagal.webfluxstockquoteservice.service.QuoteGeneratorService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.SynchronousSink;
 
+@Service
 public class QuoteGeneratorServiceImpl implements QuoteGeneratorService {
 
   private final MathContext mathContext = new MathContext(2);

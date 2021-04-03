@@ -28,7 +28,7 @@ public class QuoteHandler {
   }
 
   public Mono<ServerResponse> streamQuotes(ServerRequest request) {
-    return ServerResponse.ok().contentType(MediaType.APPLICATION_STREAM_JSON)
+    return ServerResponse.ok().contentType(MediaType.APPLICATION_NDJSON)
         .body(this.quoteGeneratorService.fetchQuoteStream(Duration.ofMillis(200)), Quote.class);
   }
 }

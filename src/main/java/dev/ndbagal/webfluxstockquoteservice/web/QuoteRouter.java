@@ -16,7 +16,7 @@ public class QuoteRouter {
     return RouterFunctions
         .route(RequestPredicates.GET("/quotes").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
             handler::fetchQuotes)
-        .andRoute(RequestPredicates.GET("/quotes").and(RequestPredicates.accept(MediaType.APPLICATION_STREAM_JSON)),
+        .andRoute(RequestPredicates.GET("/quotes").and(RequestPredicates.accept(MediaType.APPLICATION_NDJSON)),
             handler::streamQuotes);
   }
 }
